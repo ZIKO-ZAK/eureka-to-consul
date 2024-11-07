@@ -15,4 +15,5 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
 - Démarrez Consul en mode développement avec la commande :
   ```bash
   consul.exe agent -dev
-  - Accédez à l'interface web de Consul via http://localhost:8500.
+
+ - Accédez à l'interface web de Consul via http://localhost:8500.
