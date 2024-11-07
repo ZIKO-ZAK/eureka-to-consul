@@ -26,15 +26,16 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
      </dependency>
 
  - Modifiez la configuration pour chaque projet, par exemple :
-  spring:
-  cloud:
-    consul:
+    ```bash
+      spring:
+      cloud:
+      consul:
       host: localhost
       port: 8500
       discovery:
-        service-name: SERVICE-CLIENT
-  application:
-    name: SERVICE-CLIENT
+          service-name: SERVICE-CLIENT
+      application:
+          name: SERVICE-CLIENT
 
 
 - Ajoutez l'annotation @EnableDiscoveryClient dans la classe principale de chaque service :
