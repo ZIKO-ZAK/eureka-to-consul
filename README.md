@@ -19,6 +19,7 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
  - Accédez à l'interface web de Consul via http://localhost:8500.
 ### 3. Configuration des Projets pour Consul
  - Remplacez la dépendance Eureka par celle de Consul dans les fichiers pom.xml :
+  ```bash
    <dependency>
   <groupId>org.springframework.cloud</groupId>
   <artifactId>spring-cloud-starter-consul-discovery</artifactId>
