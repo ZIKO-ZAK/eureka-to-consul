@@ -22,8 +22,8 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
    <dependency>
   <groupId>org.springframework.cloud</groupId>
   <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-</dependency>
-- Modifiez la configuration pour chaque projet, par exemple :
+    </dependency>
+ - Modifiez la configuration pour chaque projet, par exemple :
   spring:
   cloud:
     consul:
