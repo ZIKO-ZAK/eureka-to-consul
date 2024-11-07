@@ -15,17 +15,17 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
 - Démarrez Consul en mode développement avec la commande :
   ```bash
   consul.exe agent -dev
-
+  
  - Accédez à l'interface web de Consul via http://localhost:8500.
 ### 3. Configuration des Projets pour Consul
  - Remplacez la dépendance Eureka par celle de Consul dans les fichiers pom.xml :
-  <dependency>
-  <groupId>org.springframework.cloud</groupId>
-  <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-  </dependency>
+   ```bash
+<dependency>
+<groupId>org.springframework.cloud</groupId>
+<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+</dependency>
 
  - Modifiez la configuration pour chaque projet, par exemple :
-  ```bash
   spring:
   cloud:
     consul:
@@ -38,7 +38,6 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
 
 
 - Ajoutez l'annotation @EnableDiscoveryClient dans la classe principale de chaque service :
-```bash
    @SpringBootApplication
 @EnableDiscoveryClient
 public class ClientServiceApplication {
@@ -46,9 +45,6 @@ public class ClientServiceApplication {
         SpringApplication.run(ClientServiceApplication.class, args);
     }
 }
-
-
-
 ### 4.Test des Services
 - Testez les services pour vérifier le bon fonctionnement de la migration vers Consul.
 # Conclusion :
