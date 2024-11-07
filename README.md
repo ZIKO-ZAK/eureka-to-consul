@@ -26,6 +26,7 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
   </dependency>
 
  - Modifiez la configuration pour chaque projet, par exemple :
+```bash
   spring:
   cloud:
     consul:
@@ -36,6 +37,7 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
   application:
     name: SERVICE-CLIENT
 - Ajoutez l'annotation @EnableDiscoveryClient dans la classe principale de chaque service :
+```bash
    @SpringBootApplication
 @EnableDiscoveryClient
 public class ClientServiceApplication {
