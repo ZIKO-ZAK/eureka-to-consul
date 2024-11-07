@@ -17,3 +17,31 @@ Ce projet détaille les étapes de la migration d'un ensemble de microservices u
   consul.exe agent -dev
 
  - Accédez à l'interface web de Consul via http://localhost:8500.
+### 3. Configuration des Projets pour Consul
+ - Remplacez la dépendance Eureka par celle de Consul dans les fichiers pom.xml :
+   <dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+</dependency>
+- Modifiez la configuration pour chaque projet, par exemple :
+  spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: SERVICE-CLIENT
+  application:
+    name: SERVICE-CLIENT
+- Ajoutez l'annotation @EnableDiscoveryClient dans la classe principale de chaque service :
+   @SpringBootApplication
+@EnableDiscoveryClient
+public class ClientServiceApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ClientServiceApplication.class, args);
+    }
+}
+### 4.Test des Services
+- Testez les services pour vérifier le bon fonctionnement de la migration vers Consul.
+# Conclusion :
+- En suivant ces étapes, vous devriez avoir migré avec succès votre projet de Eureka à Consul, bénéficiant ainsi d'une infrastructure de découverte de services plus flexible et moderne.
